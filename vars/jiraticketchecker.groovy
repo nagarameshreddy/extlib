@@ -1,4 +1,5 @@
 def call() {
+  node {
   sh '''
         commit_msg=$(git log -1 HEAD --pretty=format:%s --no-merges)
         if grep -q ^[B][L][R]-[0-9][0-9] <<< "$commit_msg"; then
@@ -18,4 +19,5 @@ def call() {
             exit 1
         fi
     '''
+  }
 }
