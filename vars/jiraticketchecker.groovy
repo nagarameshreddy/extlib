@@ -1,5 +1,4 @@
 def call() {
-  node {
   sh '''
         echo $(pwd)
         echo $(ls -a)
@@ -21,5 +20,5 @@ def call() {
             exit 1
         fi
     '''
-  }
+
 }
