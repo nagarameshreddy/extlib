@@ -1,6 +1,7 @@
 def call() {
   node {
   sh '''
+        echo $(pwd)
         commit_msg=$(git log -1 HEAD --pretty=format:%s --no-merges)
         if grep -q ^[B][L][R]-[0-9][0-9] <<< "$commit_msg"; then
           break
